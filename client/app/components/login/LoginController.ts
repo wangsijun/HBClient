@@ -3,10 +3,12 @@ class LoginController{
     static $inject = ['$scope','$q'];
     title:string
     scope:any
+    q:any
 
     constructor($scope,$q){
         this.scope = $scope;
-        this.scope.title = "µÇÂ¼";
+        this.q = $q;
+        this.scope.title = "ç™»å½•";
     }
 }
 
