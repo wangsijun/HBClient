@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="HB">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title ng-bind="title"></title>
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
+    <link href="/assets/styles/styles.css" rel="stylesheet" />
+</head>
+<body ng-controller="appController as app">
+    <div ng-cloak ng-if="app.userService.getUser().isAuthentication">
+    </div>
+    <div class="container-fluid" ng-cloak>
+        <div class="" ui-view></div>
+    </div>
+
+    <!-- jQuery + Bootstrap + Angular -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.js"></script>
+
+    <!--script src="/node_modules/underscore/underscore-min.js"></script-->
+    <script src="/node_modules/angular-filter/dist/angular-filter.min.js"></script>
+
+    <!-- Angular de facto router -->
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- UI Grid -->
+    <script src="/node_modules/angular-ui-grid/ui-grid.js"></script>
+
+    <!-- UI Boostrap -->
+    <script src="/node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- async -->
+    <script type="text/javascript" src="/node_modules/async/dist/async.js"></script>
+
+    <!-- Utilities -->
+    <script src="/node_modules/restangular/dist/restangular.min.js"></script>
+    <!-- Moment (Date Translation) -->
+    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/angular-moment/angular-moment.js"></script>
+    <script src="/node_modules/moment/locale/pt.js"></script>
+    <!--<script src="/node_modules/angular-translate/dist/angular-translate.js"></script>-->
+
+    <!-- Config files -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.config.js"></script>
+    <script src="/app/config.js"></script>
+
+    <script src="/app/components/base/BaseController.js"></script>
+    <!-- LoginController -->
+    <script src="/app/components/login/loginController.js"></script>
+</body>
+</html>

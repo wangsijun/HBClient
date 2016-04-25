@@ -1,0 +1,10 @@
+//引入颜色定义
+@import "./global/_colors.scss";
+
+@media(min-width: 300px){
+  .login-warp{
+    width: 300px;
+    border:1px solid $med-gray;
+    margin: 0 auto;
+  }
+}
