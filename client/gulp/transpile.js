@@ -7,5 +7,5 @@ gulp.task('transpile', ['clean', 'vendorScripts'], function() {
             config.base + 'app/**/**/*.ts',
 	    ])
         .pipe(typescript())
-        .pipe(gulp.dest(config.base + 'app'));
+        .pipe(gulp.dest(config.dist + 'app'));
 });
