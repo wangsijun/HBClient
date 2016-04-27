@@ -1,10 +1,28 @@
-//ÒýÈëÑÕÉ«¶¨Òå
+ï»¿//å¯¼å…¥colorå®šä¹‰
 @import "./global/_colors.scss";
 
 @media(min-width: 300px){
-  .login-warp{
-    width: 300px;
+  .form-warp{
+    width: 350px;
     border:1px solid $med-gray;
-    margin: 0 auto;
+    background: $med-gray;
+    margin: auto;
+    padding:0 15px;
+    -webkit-box-shadow: 3px 3px 3px $med-gray;
+    -moz-box-shadow: 3px 3px 3px $med-gray;
+    box-shadow: 3px 3px 3px $med-gray;
+    .logo{
+      border-bottom:1px solid $med-gray;
+    }
   }
 }
+
+.login-warp{
+  position: absolute;
+  width: 100%;
+  margin-top: -150px;
+  top:50%;
+}
+
+.form-top{ padding:15px; background: $white;}
+.form-bottom{ padding:15px; background: $lgt-gray;}

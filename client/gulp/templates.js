@@ -5,7 +5,7 @@ var config = require('./config');
 
 // minfy and insert partials into templatecache
 gulp.task('templates', function () {
-    return gulp.src(config.base + 'app/**/*.html')
+    return gulp.src(config.base + 'app/templates/**/*.html')
     	.pipe(minifyHTML({empty: true}))
         .pipe(templateCache('templates.js', {
         	root: '/app',

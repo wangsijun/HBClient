@@ -1,5 +1,26 @@
 @media (min-width: 300px) {
-  .login-warp {
-    width: 300px;
+  .form-warp {
+    width: 350px;
     border: 1px solid #98A4AE;
-    margin: 0 auto; } }
+    background: #98A4AE;
+    margin: auto;
+    padding: 0 15px;
+    -webkit-box-shadow: 3px 3px 3px #98A4AE;
+    -moz-box-shadow: 3px 3px 3px #98A4AE;
+    box-shadow: 3px 3px 3px #98A4AE; }
+    .form-warp .logo {
+      border-bottom: 1px solid #98A4AE; } }
+
+.login-warp {
+  position: absolute;
+  width: 100%;
+  margin-top: -150px;
+  top: 50%; }
+
+.form-top {
+  padding: 15px;
+  background: #fff; }
+
+.form-bottom {
+  padding: 15px;
+  background: #C5CFDA; }

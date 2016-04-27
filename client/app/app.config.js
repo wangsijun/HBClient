@@ -33,7 +33,7 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
         .state('home', {
             url: '',
-            templateUrl: '/app/components/login/login.html',
+            templateUrl: '/app/templates/login/login.html',
             controller: 'LoginController',
             controllerAs: 'login'
         })
