@@ -1,26 +1,67 @@
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-top: 0;
+  opacity: 0;
+  position: relative;
+  left: 20px;
+  top: -2px; }
+
+input[type=checkbox] + label {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-image: url(/assets/images/checkbox_small.png); }
+
+input[type=checkbox]:checked + label {
+  background-image: url(/assets/images/checkbox_small_checked.png); }
+
+.input-group-addon {
+  background-color: rgba(51, 51, 51, 0.3);
+  border: 1px solid transparent;
+  color: #d2d2d2; }
+
+.input-transparent {
+  border: none;
+  color: #d2d2d2;
+  background-color: rgba(51, 51, 51, 0.4); }
+  .input-transparent:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+
+body {
+  background-color: #154265 20%;
+  background-image: radial-gradient(farthest-side ellipse at 10% 0, #154265 20%, #7392c2);
+  background-image: -webkit-radial-gradient(10% 0, farthest-side ellipse, #154265 20%, #7392c2);
+  background-image: -moz-radial-gradient(10% 0, farthest-side ellipse, #154265 20%, #7392c2);
+  background-attachment: fixed, fixed; }
+
 @media (min-width: 300px) {
   .form-warp {
     width: 350px;
-    border: 1px solid #98A4AE;
-    background: #98A4AE;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgba(51, 51, 51, 0.4);
     margin: auto;
-    padding: 0 15px;
-    -webkit-box-shadow: 3px 3px 3px #98A4AE;
-    -moz-box-shadow: 3px 3px 3px #98A4AE;
-    box-shadow: 3px 3px 3px #98A4AE; }
+    padding: 0 15px; }
     .form-warp .logo {
-      border-bottom: 1px solid #98A4AE; } }
+      text-align: center; } }
+
+.container-fluid {
+  padding: 0; }
 
 .login-warp {
   position: absolute;
   width: 100%;
-  margin-top: -150px;
-  top: 50%; }
+  margin-top: -250px;
+  top: 50%;
+  color: #fff; }
 
 .form-top {
-  padding: 15px;
-  background: #fff; }
+  padding: 15px 15px 0px 15px; }
 
 .form-bottom {
-  padding: 15px;
-  background: #C5CFDA; }
+  padding: 15px; }
