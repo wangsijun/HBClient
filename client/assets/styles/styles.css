@@ -31,6 +31,9 @@ input[type=checkbox]:checked + label {
     -moz-box-shadow: none;
     box-shadow: none; }
 
+html, body, ui-view, div[ui-view], .container-fluid {
+  height: 100%; }
+
 body {
   background-color: #154265 20%;
   background-image: radial-gradient(farthest-side ellipse at 10% 0, #154265 20%, #7392c2);
@@ -54,7 +57,7 @@ body {
   padding: 0; }
 
 .login-warp {
-  position: absolute;
+  position: relative;
   width: 100%;
   margin-top: -250px;
   top: 50%;
@@ -65,3 +68,21 @@ body {
 
 .form-bottom {
   padding: 15px; }
+
+.nav-menu {
+  position: fixed;
+  left: 250px;
+  margin-left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); }
+
+.header-warp {
+  background: rgba(0, 0, 0, 0.3);
+  height: 100px;
+  position: fixed;
+  width: 100%; }
+
+.view-main {
+  padding-top: 100px;
+  margin-left: 250px; }
