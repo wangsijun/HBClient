@@ -34,13 +34,15 @@ body{
   }
 }
 
-.container-fluid{ padding:0;}
+.container-fluid{ 
+    padding:0; 
+    margin-left:250px;
+}
 .login-warp{
   position: relative;
   width: 100%;
-  margin-top: -250px;
-  top:50%;
   color:$white;
+  margin:100px 0 0 -125px;
 }
 
 .form-top{ padding: 15px 15px 0px 15px;}
@@ -64,5 +66,4 @@ body{
 
 .view-main{
   padding-top: 100px;
-  margin-left: 250px;
 }

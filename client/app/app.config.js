@@ -34,14 +34,14 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
         .state('home', {
             url: '',
             templateUrl: '/app/templates/login/login.html',
-            controller: 'LoginController',
+            controller: 'loginController',
             controllerAs: 'login'
         })
-        .state('authenticate', {
-            url: '/authenticate',
-            templateUrl: '/app/templates/loadingScreen.html',
-            controller: 'LoginController',
-            controllerAs: 'authenticate'
+        .state('panel', {
+            url: '/panel',
+            templateUrl: '/app/templates/panel/panel.html',
+            controller: 'panelController',
+            controllerAs: 'panel'
         })
     //.state('logout', {
     //    url: '/login',
