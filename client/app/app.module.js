@@ -5,7 +5,9 @@ angular.module('hb.core',['ui.router'])
 angular.module('HB',[
     'ui.router',
     'ui.bootstrap',
+    'restangular',
     'hb.core',
+    'hb.service',
     'hb.components',
    // 'ngAnimate',
     'ngCookies',

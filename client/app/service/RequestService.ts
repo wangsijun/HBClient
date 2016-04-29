@@ -1,6 +1,6 @@
 /// <reference path="./BaseService.ts"/>
 class RequestService{
-    static $inject = ['RestServer', '$q'];
+    static $inject = ['restServer', '$q'];
     q:any
     restServer:any
     canceller:any
@@ -92,3 +92,4 @@ class RequestService{
         this.canceller = this.q.defer()
     }
 }
+angular.module('hb.service').service('requestService',RequestService);

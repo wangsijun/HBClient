@@ -17,14 +17,15 @@ class UserService{
     }
 
     constructor($window,$state,$log,$cookies,RequestService){
-        this.window = $window;
-        this.state = $state;
-        this.log = $log;
-        this.cookies = $cookies;
-        this.requestService = RequestService;
+        var $this = this
+        $this.window = $window
+        $this.state = $state
+        $this.log = $log
+        $this.cookies = $cookies
+        $this.requestService = RequestService
 
-        if ($window.sessionStorage.userInfo) {
-            this.activeUser = JSON.parse($window.sessionStorage.userInfo);
+        if ($this.window.sessionStorage.userInfo) {
+            $this.activeUser = JSON.parse($this.window.sessionStorage.userInfo);
         }
     }
     clearUser(){
@@ -39,6 +40,10 @@ class UserService{
 
     getUser(){
         return this.activeUser
+    }
+
+    updateUser(){
+        this.window.sessionStorage.userInfo = JSON.stringify(this.activeUser);
     }
 
     authenticate(user,callback){

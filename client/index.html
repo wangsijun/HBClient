@@ -9,7 +9,7 @@
     <link href="/node_modules/angular-ui-grid/ui-grid.min.css" rel="stylesheet" />
     <link href="/assets/styles/styles.css" rel="stylesheet" />
 </head>
-<body ng-controller="appController as app">
+<body ng-controller="appController as app" ng-class="app.userService.getUser().isAuthentication?'':'body-login'">
     <div ng-cloak ng-if="app.userService.getUser().isAuthentication">
         <div ng-include="'/app/templates/menu/menu.html'"></div>
         <div ng-include="'/app/templates/search/search.html'"></div>
@@ -24,7 +24,7 @@
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-cookies/angular-cookies.js"></script>
 
-    <!--script src="/node_modules/underscore/underscore-min.js"></script-->
+    <script src="/node_modules/underscore/underscore-min.js"></script>
     <script src="/node_modules/angular-filter/dist/angular-filter.min.js"></script>
 
     <!-- Angular de facto router -->
@@ -37,10 +37,10 @@
     <script src="/node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <!-- async -->
-    <script type="text/javascript" src="/node_modules/async/dist/async.js"></script>
+    <script src="/node_modules/async/dist/async.js"></script>
 
     <!-- Utilities -->
-    <script src="/node_modules/restangular/dist/restangular.min.js"></script>
+    <script src="/node_modules/restangular/dist/restangular.js"></script>
     <!-- Moment (Date Translation) -->
     <script src="/node_modules/moment/moment.js"></script>
     <script src="/node_modules/angular-moment/angular-moment.js"></script>
@@ -51,10 +51,17 @@
     <script src="/app/app.module.js"></script>
     <script src="/app/app.config.js"></script>
     <script src="/app/config.js"></script>
-
+    <!-- Core -->
+    <script src="/app/core/BaseServer.js"></script>
+    <script src="/app/core/RestServer.js"></script>
+    <!-- Service -->
+    <script src="/app/service/BaseService.js"></script>
+    <script src="/app/service/RequestService.js"></script>
+    <script src="/app/service/UserService.js"></script>
+    <!-- Controller -->
     <script src="/app/components/base/BaseController.js"></script>
-    <!-- LoginController -->
     <script src="/app/components/login/LoginController.js"></script>
     <script src="/app/components/panel/PanelController.js"></script>
+
 </body>
 </html>

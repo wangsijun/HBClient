@@ -6,12 +6,13 @@
 
 appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
-appRun.$inject = ['$rootScope', '$cookies', '$location', '$state'];
+appRun.$inject = ['$rootScope', '$cookies', '$location', '$state', 'userService'];
 
-appController.$inject = [ '$location'];
+appController.$inject = [ '$location','userService'];
 
-function appController($location) {
+function appController($location,UserService) {
     this.$location = $location;
+    this.userService = UserService;
 }
 
 function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -58,13 +59,15 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
 
 }
 
-function appRun($rootScope, $cookies, $location) {
+function appRun($rootScope, $cookies, $location,$state,UserService) {
     //添加路由监测
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-        if (toState.name == "") {
+        if (toState.name == "home") {
             //$location.path();//获取路由地址
-            $location.path('/');//设置路由地址
-            $cookies.remove('coaching');
+            //$location.path('/');//设置路由地址
+            var user = UserService.getUser();
+            user.isAuthentication = false;
+            //$cookies.remove('coaching');
         }
         $rootScope.title = toState.name;
         //使用event.preventDefault()可以阻止模板解析的发生
