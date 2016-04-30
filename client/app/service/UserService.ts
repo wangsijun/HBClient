@@ -11,6 +11,7 @@ class UserService{
     activeUser = {
         authentic:false,
         isAuthentication:false,
+        friends:null,
         firstName:null,
         lastName:null,
         userName:null
@@ -32,6 +33,7 @@ class UserService{
         this.activeUser = {
             authentic:false,
             isAuthentication:false,
+            friends:false,
             firstName:null,
             lastName:null,
             userName:null
@@ -59,6 +61,13 @@ class UserService{
 
     recordUser(user,data){
         this.clearUser();
+        //user.authentic = data.authentic;
+        //user.isAuthentication = data.isAuthentication;
+        //user.friends = data.friends;
+        //user.firstName = data.firstName;
+        //user.lastName = data.lastName;
+        //user.userName = data.userName;
+
     }
 
 

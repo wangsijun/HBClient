@@ -13,10 +13,10 @@
     <div ng-cloak ng-if="app.userService.getUser().isAuthentication">
         <div ng-include="'/app/templates/menu/menu.html'"></div>
         <div ng-include="'/app/templates/search/search.html'"></div>
-        <div ng-include="'/app/templates/filter/filter.html'"></div>
+        <div ng-include="'/app/templates/filter/filter.html'" ng-if="app.userService.getUser().friends"></div>
     </div>
     <div class="container-fluid" ng-cloak>
-        <div class="view-main" ui-view></div>
+        <div ng-class="app.userService.getUser().isAuthentication?'view-main view-main-gray':'view-main'" ui-view></div>
     </div>
 
     <!-- jQuery + Bootstrap + Angular -->

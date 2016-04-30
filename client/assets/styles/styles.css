@@ -75,13 +75,26 @@ html, body, ui-view, div[ui-view], .container-fluid {
   margin-left: -250px;
   width: 250px;
   height: 100%;
-  background: #fff; }
+  background: #2f4050; }
 
 .header-warp {
   background: #fff;
   height: 100px;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word; }
 
 .view-main {
   padding-top: 100px; }
+
+.view-main-gray {
+  background: #f3f3f4; }
+
+.filter-warp {
+  height: 100%;
+  background: #565656;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 100px; }
