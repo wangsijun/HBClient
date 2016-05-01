@@ -8,8 +8,6 @@ class PanelController{
         $this.title = "hello";
         $this.key = "word";
         var user = UserService.getUser();
-
     }
-
 }
 angular.module('hb.components').controller('panelController',PanelController);

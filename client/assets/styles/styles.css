@@ -17,6 +17,16 @@ input[type=checkbox] + label {
 input[type=checkbox]:checked + label {
   background-image: url(/assets/images/checkbox_small_checked.png); }
 
+.hbicon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px; }
+
+.hbicon-operation {
+  background-image: url(/assets/images/hb-operation-btn.svg); }
+
 .input-group-addon {
   background-color: rgba(51, 51, 51, 0.3);
   border: 1px solid transparent;
@@ -33,6 +43,10 @@ input[type=checkbox]:checked + label {
 
 html, body, ui-view, div[ui-view], .container-fluid {
   height: 100%; }
+
+ul, ol {
+  list-style-type: none;
+  padding: 0; }
 
 .body-login {
   background-color: #154265 20%;
@@ -61,7 +75,7 @@ html, body, ui-view, div[ui-view], .container-fluid {
   position: relative;
   width: 100%;
   color: #fff;
-  margin: 100px 0 0 -125px; }
+  margin: 40px 0 0 -125px; }
 
 .form-top {
   padding: 15px 15px 0px 15px; }
@@ -78,15 +92,36 @@ html, body, ui-view, div[ui-view], .container-fluid {
   background: #2f4050; }
   .nav-menu .logo {
     width: 250px;
-    height: 100px; }
+    height: 40px; }
 
 .header-warp {
   background: #fff;
-  height: 100px;
+  height: 40px;
   position: fixed;
   width: 100%;
   word-wrap: break-word;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+
+.header-operation li {
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.08); }
+  .header-operation li a {
+    font-size: 18px; }
+
+.header-operation .header-operation-btn {
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px; }
+
+.header-operation-left {
+  float: left; }
+
+.header-operation-right {
+  float: right; }
 
 .view-main {
   padding-top: 100px; }

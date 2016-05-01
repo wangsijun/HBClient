@@ -1,11 +1,16 @@
 ﻿//导入color定义
 @import "./global/_colors.scss";
 @import "./global/_element-rewrite-input-style.scss";
+@import "./global/_hbicon.scss";
 @import "./rewriteBootstrap/forms.scss";
 @import "./rewriteBootstrap/input-groups.scss";
 
 
 html, body, ui-view, div[ui-view], .container-fluid{ height:100%; }
+ul,ol{
+  list-style-type: none;
+  padding: 0;
+}
 
 .body-login{
   background-color: #154265 20%;
@@ -42,7 +47,7 @@ html, body, ui-view, div[ui-view], .container-fluid{ height:100%; }
   position: relative;
   width: 100%;
   color:$white;
-  margin:100px 0 0 -125px;
+  margin:40px 0 0 -125px;
 }
 
 .form-top{ padding: 15px 15px 0px 15px;}
@@ -57,18 +62,11 @@ html, body, ui-view, div[ui-view], .container-fluid{ height:100%; }
   background: $blue-black;
   .logo{
     width: 250px;
-    height: 100px;
+    height: 40px;
   }
 }
 
-.header-warp{
-  background: $white;
-  height: 100px;
-  position: fixed;
-  width: 100%;
-  word-wrap: break-word;
-  overflow: hidden;
-}
+@import "./_header/header.scss";
 
 .view-main{
   padding-top: 100px;

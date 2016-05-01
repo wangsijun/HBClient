@@ -12,7 +12,7 @@
 <body ng-controller="appController as app" ng-class="app.userService.getUser().isAuthentication?'':'body-login'">
     <div ng-cloak ng-if="app.userService.getUser().isAuthentication">
         <div ng-include="'/app/templates/menu/menu.html'"></div>
-        <div ng-include="'/app/templates/search/search.html'"></div>
+        <div ng-include="'/app/templates/header/header.html'"></div>
         <div ng-include="'/app/templates/filter/filter.html'" ng-if="app.userService.getUser().friends"></div>
     </div>
     <div class="container-fluid" ng-cloak>
@@ -61,6 +61,7 @@
     <script src="/app/service/UserService.js"></script>
     <!-- Controller -->
     <script src="/app/components/base/BaseController.js"></script>
+    <script src="/app/components/header/HeaderController.js"></script>
     <script src="/app/components/login/LoginController.js"></script>
     <script src="/app/components/panel/PanelController.js"></script>
 </body>
