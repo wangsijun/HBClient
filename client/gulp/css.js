@@ -7,6 +7,6 @@ var config = require('./config');
 gulp.task('css', ['sass'], function() {
     return gulp.src([config.base + 'assets/styles/*.css', config.base + 'app/vendor/*.css' ])
         //.pipe(minify())
-        .pipe(concat('nova.min.css'))
+        .pipe(concat('hb.min.css'))
         .pipe(gulp.dest(config.dist + 'assets/styles'));
 });
