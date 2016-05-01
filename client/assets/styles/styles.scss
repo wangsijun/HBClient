@@ -54,6 +54,12 @@ ul,ol{
 .form-top{ padding: 15px 15px 0px 15px;}
 .form-bottom{ padding:15px;}
 
+.nav-bar{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+}
 .nav-menu{
   position: fixed;
   left: 250px;
@@ -70,7 +76,7 @@ ul,ol{
 @import "./_header/header.scss";
 
 .view-main{
-  padding-top: 100px;
+  padding-top: 40px;
 }
 .view-main-gray{
   background:$double-lgt-gray;

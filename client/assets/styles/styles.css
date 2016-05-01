@@ -1699,6 +1699,12 @@ ul, ol {
 .form-bottom {
   padding: 15px; }
 
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 1; }
+
 .nav-menu {
   position: fixed;
   left: 250px;
@@ -1720,10 +1726,15 @@ ul, ol {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
 
 .header-operation li {
-  float: left;
-  border-right: 1px solid rgba(0, 0, 0, 0.08); }
+  float: left; }
+  .header-operation li:hover {
+    background: #f3f3f4; }
   .header-operation li a {
-    font-size: 16px; }
+    font-size: 16px;
+    color: #337ab7;
+    position: relative; }
+    .header-operation li a:hover {
+      text-decoration: none; }
 
 .header-operation .header-operation-btn {
   width: 40px;
@@ -1733,14 +1744,28 @@ ul, ol {
   vertical-align: middle;
   line-height: 40px; }
 
+.header-operation .remind-number {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  display: inherit;
+  left: .75em;
+  top: -0.3em;
+  border-radius: 50%;
+  background: #f76549; }
+
 .header-operation-left {
   float: left; }
+  .header-operation-left li {
+    border-right: 1px solid rgba(0, 0, 0, 0.08); }
 
 .header-operation-right {
   float: right; }
+  .header-operation-right li {
+    border-left: 1px solid rgba(0, 0, 0, 0.08); }
 
 .view-main {
-  padding-top: 100px; }
+  padding-top: 40px; }
 
 .view-main-gray {
   background: #f3f3f4; }
