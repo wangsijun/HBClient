@@ -8,11 +8,14 @@ appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
 appRun.$inject = ['$rootScope', '$cookies', '$location', '$state', 'userService'];
 
-appController.$inject = [ '$location','userService'];
+appController.$inject = ['$http','$rootScope', '$location','userService'];
 
-function appController($location,UserService) {
+function appController($http,$rootScope,$location,UserService) {
     this.$location = $location;
     this.userService = UserService;
+    $http.get("assets/jsons/transactions.json").success(function(result){
+        $rootScope.data = result;
+    });
 }
 
 function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {

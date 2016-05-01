@@ -76,14 +76,17 @@ html, body, ui-view, div[ui-view], .container-fluid {
   width: 250px;
   height: 100%;
   background: #2f4050; }
+  .nav-menu .logo {
+    width: 250px;
+    height: 100px; }
 
 .header-warp {
   background: #fff;
   height: 100px;
   position: fixed;
   width: 100%;
-  overflow: hidden;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  overflow: hidden; }
 
 .view-main {
   padding-top: 100px; }

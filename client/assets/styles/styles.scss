@@ -55,6 +55,10 @@ html, body, ui-view, div[ui-view], .container-fluid{ height:100%; }
   width: 250px;
   height: 100%;
   background: $blue-black;
+  .logo{
+    width: 250px;
+    height: 100px;
+  }
 }
 
 .header-warp{
@@ -62,8 +66,8 @@ html, body, ui-view, div[ui-view], .container-fluid{ height:100%; }
   height: 100px;
   position: fixed;
   width: 100%;
-  overflow: hidden;
   word-wrap: break-word;
+  overflow: hidden;
 }
 
 .view-main{
