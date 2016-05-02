@@ -1,0 +1,11 @@
+{
+  "menuData" :[
+    {
+        "name":"系统设置",
+        "iconType":"class",
+        "iconClass":"icon-cog2",
+        "iconImage":"",
+        "link":"SystemSettings"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<div class="nav-menu-list">
+    <ul>
+        <li ng-repeat="item in navList.data" ng-class="item.active?'active':''">
+            <a ng-click="navList.GoState(item.link)"><i ng-class="item.iconClass"></i><span>{{item.name}}</span></a>
+        </li>
+    </ul>
+    <div class="rescroll-bar">
+        <div class="rescroll-bar-handle"></div>
+    </div>
+</div>

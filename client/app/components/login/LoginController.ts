@@ -18,10 +18,11 @@ class LoginController{
     }
     
     login(){
-        var user = this.userService.getUser()
+        var $this = this
+        var user = $this.userService.getUser()
         user.isAuthentication=true
-        this.userService.updateUser()
-        this.state.go('panel')
+        $this.userService.updateUser()
+        $this.state.go('panel')
     }
 }
 
