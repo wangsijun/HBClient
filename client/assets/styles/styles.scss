@@ -75,6 +75,7 @@ ul,ol{
   }
 
 }
+
 .nav-menu-list{
   &:hover.rescroll-bar{
     display: block;
@@ -83,8 +84,8 @@ ul,ol{
     min-height: 40px;
     line-height: 40px;
     vertical-align: middle;
-    border-left:3px solid transparent ;
     a{
+      border-left:3px solid transparent ;
       color: $white-gray;
       text-decoration: none;    
       display: block;
@@ -96,12 +97,27 @@ ul,ol{
         margin:0 10px;
       }
     }
+    ul{
+      background:$black-ash3;
+      border:$black-ash4;
+      display: none;
+      &.open{
+        display:block;
+      }
+      li{
+        padding-left:15%;
+        &.active{
+          background: $black-ash4;
+          a{
+            color: $white;
+          }
+        }
+      }
+    }
   }
   .active{
     border-color: $link-blue;
-    a{
-      color: $white;
-    }
+    color: $white;
    }
   
 }
