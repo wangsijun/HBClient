@@ -22,7 +22,7 @@ class LoginController{
         var user = $this.userService.getUser()
         user.isAuthentication=true
         $this.userService.updateUser()
-        $this.state.go('panel')
+        $this.state.go('panel.menu')
     }
 }
 

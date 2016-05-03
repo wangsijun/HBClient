@@ -43,10 +43,21 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
         })
         .state('panel', {
             url: '/panel',
-            templateUrl: '/app/templates/panel/panel.html',
-            controller: 'panelController',
-            controllerAs: 'panel'
+            template:'<ui-view></ui-view>' ,
+            abstract: true,
         })
+            .state('panel.menu', {
+                url: '/menu',
+                templateUrl: '/app/templates/panel/panel.html',
+                controller: 'menuSettingsController',
+                controllerAs: 'panelVm'
+            })
+            .state('panel.permission', {
+                url: '/permission',
+                templateUrl: '/app/templates/panel/panel.html',
+                controller: 'permissionSettingsController',
+                controllerAs: 'panelVm'
+            })
     //.state('logout', {
     //    url: '/login',
     //    templateUrl: '/app/components/login/login.html',

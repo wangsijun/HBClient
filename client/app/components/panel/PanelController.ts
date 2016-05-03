@@ -1,12 +1,14 @@
 /// <reference path="../base/BaseController.ts"/>
 class PanelController{
-    static $inject = ['userService'];
+    //static $inject = ['userService'];
     title: string
     key: string
-    constructor(UserService){
+    state: string
+    constructor(UserService,state){
         var $this = this;
         $this.title = "hello";
         $this.key = "word";
+        $this.state = state;
         var user = UserService.getUser();
     }
 }

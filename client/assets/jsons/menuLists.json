@@ -5,7 +5,17 @@
         "iconType":"class",
         "iconClass":"icon-cog2",
         "iconImage":"",
-        "link":"SystemSettings"
+        "link":"panel",
+        "child":[
+          {
+            "name":"目录设置",
+            "link":"panel.menu"
+          },
+          {
+            "name":"权限设置",
+            "link":"panel.permission"
+          }
+        ]
     }
   ]
 }

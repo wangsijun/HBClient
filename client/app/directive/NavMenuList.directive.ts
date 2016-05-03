@@ -25,9 +25,29 @@ module NavmMenuListDirective{
             $this.state = $state
         }
 
-        GoState(link){
+        GoState(link,menu){
             var $this =this
+            angular.forEach($this.data,function(item,index){
+                if(item.child){
+                    angular.forEach(item.child,function(n,i){
+                        n.active = false
+                    })
+                }
+            })
+            if(menu){
+                menu.active=true
+            }
             $this.state.go(link)
+        }
+
+        OperateMenuList(e) {
+            var ele = e.currentTarget.nextElementSibling;
+            var openEle = $(".childMenu.open");
+            var className = ele.className;
+            openEle.removeClass('open');
+            if (className.indexOf('open')==-1) {
+                $(ele).addClass('open');
+            }
         }
     }
 }
