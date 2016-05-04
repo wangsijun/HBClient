@@ -3,7 +3,7 @@
     {
         "name":"系统设置",
         "iconType":"class",
-        "iconClass":"icon-cog2",
+        "iconClass":"fa fa-cog",
         "iconImage":"",
         "link":"panel",
         "child":[

@@ -18,7 +18,9 @@
       background: $double-lgt-gray;
     }
     a{
-      font-size: 16px;
+      i{
+        font-size: 14px;
+      }
       color: $link-blue;
       position: relative;
       &:hover{
