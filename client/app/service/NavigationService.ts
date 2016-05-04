@@ -8,7 +8,7 @@ class NavigationService{
     cookies:any
     window:any
     userService:UserService
-
+    widescreen:boolean
 
     constructor($rootScope,$state,$log,$cookies,$window,UserService){
         var $this = this
@@ -18,9 +18,7 @@ class NavigationService{
         $this.cookies = $cookies
         $this.window = $window
         $this.userService = UserService
+        $this.widescreen=true
     }
-
-
-
 }
 angular.module('hb.service').service('navigationService',NavigationService);

@@ -18,11 +18,15 @@ module NavmMenuListDirective{
     export class NavMenuListController{
         //static $inject = ['$scope','$state','$log']
         state:any
+        scope:any
         data:Array<any>
+
+
         constructor($scope,$state,$log){
             var $this = this
             $this.data=this.data
             $this.state = $state
+            $this.scope = $scope
         }
 
         GoState(link,menu){

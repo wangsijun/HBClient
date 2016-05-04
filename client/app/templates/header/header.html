@@ -1,8 +1,8 @@
 <div class="header-warp" ng-controller="headerController as header">
-    <div class="container-fluid">
+    <div ng-class="header.widescreen?'container-fluid':'container-fluid-mini'">
         <ul class="header-operation header-operation-left">
-            <li class="header-operation-btn">
-                <a ng-click="header.show()">
+            <li class="header-operation-btn" ng-click="header.ChangeWidescreen()">
+                <a>
                     <i class="fa fa-bars"></i>
                 </a>
             </li>

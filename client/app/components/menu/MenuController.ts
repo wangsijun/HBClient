@@ -1,16 +1,19 @@
 /// <reference path="../base/BaseController.ts"/>
 class MenuController{
-    static $inject = ['$http','$log','userService'];
+    static $inject = ['$scope','$http','$log','userService','navigationService'];
     http:any
     log:any
     userService:UserService
+    navigationService:NavigationService
     menuList:Array<any>
-
-    constructor($http,$log,UserService){
+    widescreen:boolean
+    constructor($scope,$http,$log,UserService,NavigationService){
         var $this = this;
         $this.http = $http
         $this.log = $log
         $this.userService=UserService
+        $this.navigationService=NavigationService
+        $this.widescreen = true
         $this.http.get('/assets/jsons/menuLists.json').success(function(result){
             angular.forEach(result.menuData,function(item,index){
                 if(index===0){
@@ -20,6 +23,9 @@ class MenuController{
             $this.menuList =result.menuData
         }).error(function(err){
             $this.log.log(err)
+        })
+        $scope.$watch(function(){ return $this.navigationService.widescreen },function () {
+            $this.widescreen = $this.navigationService.widescreen;
         })
     }
 }

@@ -8,14 +8,19 @@ appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
 appRun.$inject = ['$rootScope', '$cookies', '$location', '$state', 'userService'];
 
-appController.$inject = ['$http','$rootScope', '$location','userService'];
+appController.$inject = ['$http','$rootScope', '$location','userService','navigationService'];
 
-function appController($http,$rootScope,$location,UserService) {
-    this.$location = $location;
-    this.userService = UserService;
-    $http.get("assets/jsons/transactions.json").success(function(result){
+function appController($http,$rootScope,$location,UserService,NavigationService) {
+    var $this = this
+    $this.$location = $location;
+    $this.userService = UserService;
+    $this.widescreen = true;
+    $http.get("/assets/jsons/transactions.json").success(function(result){
         $rootScope.data = result;
     });
+    $rootScope.$watch(function(){return NavigationService.widescreen},function(){
+        $this.widescreen = NavigationService.widescreen
+    })
 }
 
 function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
