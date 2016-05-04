@@ -33,7 +33,6 @@
     "bowser": "^1.0.0",
     "d3": "~3.5.5",
     "dateformat": "^1.0.11",
-    "font-awesome": "^4.3.0",
     "jquery": "^2.1.4",
     "modernizr": "^3.0.0-alpha.4",
     "moment": "^2.11.2",
