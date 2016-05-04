@@ -148,11 +148,12 @@ ul,ol{
         text-decoration: none;
         display: block;
         cursor: pointer;
+        font-size: 24px;
         &:hover{
           color: $white;
         }
         i{
-          margin:0 10px;
+          margin:0 15px;
         }
         span{
           display: none;
