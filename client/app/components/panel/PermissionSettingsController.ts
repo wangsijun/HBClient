@@ -1,15 +1,15 @@
 /// <reference path="./PanelController.ts"/>
 
 class PermissionSettingsController extends PanelController{
-    static $inject =['userService']
-    userService:UserService
+    static $inject =['adminService']
+    adminService:AdminService
 
-    constructor(UserService){
-        super(UserService,'permission-settings')
+    constructor(AdminService){
+        super(AdminService,'permission-settings')
         var $this = this
         $this.key="这个"
         $this.title="很满意"
-        $this.userService = UserService
+        $this.adminService = AdminService
     }
 
 }

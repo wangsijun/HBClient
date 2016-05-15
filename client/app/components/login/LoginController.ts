@@ -1,16 +1,16 @@
 /// <reference path="../base/BaseController.ts"/>
 class LoginController{
-    static $inject = ['$scope','$q','$state','userService'];
+    static $inject = ['$scope','$q','$state','adminService'];
 
-    userService:UserService
+    adminService:AdminService
     title:string
     scope:any
     state:any
     q:any
 
-    constructor($scope,$q,$state,UserService){
+    constructor($scope,$q,$state,AdminService){
         var $this = this;
-        $this.userService = UserService
+        $this.adminService = AdminService
         $this.scope = $scope
         $this.state = $state
         $this.q = $q
@@ -19,9 +19,9 @@ class LoginController{
     
     login(){
         var $this = this
-        var user = $this.userService.getUser()
-        user.isAuthentication=true
-        $this.userService.updateUser()
+        var admin = $this.adminService.getAdmin()
+        admin.isAuthentication=true
+        $this.adminService.updateAdmin()
         $this.state.go('panel.menu')
     }
 }

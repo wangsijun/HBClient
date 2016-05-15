@@ -1,14 +1,15 @@
 /// <reference path="../base/BaseController.ts"/>
 class HeaderController{
-    static $inject = ['$scope','userService','navigationService'];
+    static $inject = ['$scope','adminService','navigationService'];
     scope:any
     navigationService:NavigationService
+    adminService:AdminService
     widescreen:boolean
-
-    constructor($scope,UserService,NavigationService){
+    constructor($scope,AdminService,NavigationService){
         var $this = this;
         $this.scope = $scope
         $this.navigationService = NavigationService
+        $this.adminService = AdminService
         $this.widescreen = true
     }
     ChangeWidescreen(){

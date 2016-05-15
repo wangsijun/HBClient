@@ -1,17 +1,17 @@
 /// <reference path="../base/BaseController.ts"/>
 class MenuController{
-    static $inject = ['$scope','$http','$log','userService','navigationService'];
+    static $inject = ['$scope','$http','$log','adminService','navigationService'];
     http:any
     log:any
-    userService:UserService
+    adminService:AdminService
     navigationService:NavigationService
     menuList:Array<any>
     widescreen:boolean
-    constructor($scope,$http,$log,UserService,NavigationService){
+    constructor($scope,$http,$log,AdminService,NavigationService){
         var $this = this;
         $this.http = $http
         $this.log = $log
-        $this.userService=UserService
+        $this.adminService=AdminService
         $this.navigationService=NavigationService
         $this.widescreen = true
         $this.http.get('/assets/jsons/menuLists.json').success(function(result){

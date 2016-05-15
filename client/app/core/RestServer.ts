@@ -2,14 +2,22 @@
 class RestServer{
     static $inject = ['Restangular', '$state', '$log','$q','$http'];
     q:any
-    version = '/v1'
+
 
     constructor(Restangular, $state, $log,$q,$http){
         this.q = $q;
+        var version = '/v1'
         return Restangular.withConfig(function(RestangularConfigurer) {
-            RestangularConfigurer.setBaseUrl(this.version);
+            RestangularConfigurer.setBaseUrl(version);
             RestangularConfigurer.setRestangularFields({ etag: 'eTag' });
-            RestangularConfigurer.setFullResponse(true); // return data and header information
+            //RestangularConfigurer.setFullResponse(true); // return data and header information
+            RestangularConfigurer.setResponseExtractor(function(data, operation, what, url, response, deferred) {
+                var result = {};
+                result["data"] = data
+                result["headers"] = response.config.headers
+                result["status"] = response.status
+                return result
+            });
             RestangularConfigurer.setErrorInterceptor(
                 function (response, deferred, responseHandler) {
                     if (response.status == 401) {

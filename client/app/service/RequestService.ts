@@ -20,7 +20,7 @@ class RequestService{
         rest.post('', postData)
             .then(
             function(result) {
-                callback(null, result.data || result);
+                callback(null, result.data||result);
             },
             function(result) {
                 callback(result, null);
@@ -42,7 +42,7 @@ class RequestService{
         rest.get()
             .then(
             function(result) {
-                callback(null, result.data);
+                callback(null, result.data||result);
             },
             function(res) {
                 callback(res, null);
@@ -65,7 +65,7 @@ class RequestService{
         rest.withHttpConfig({timeout: this.canceller.promise}).get(query)
             .then(
             function(result) {
-                callback(null, result.data || result);
+                callback(null, result.data||result);
             },
             function(result) {
                 callback(result, null);

@@ -4,6 +4,7 @@
 @import "./global/_hbicon.scss";
 @import "./global/_component.scss";
 @import "./global/_scrollbar.scss";
+@import "./global/_grid.scss";
 @import "./rewriteBootstrap/forms.scss";
 @import "./rewriteBootstrap/input-groups.scss";
 
@@ -164,12 +165,22 @@ ul,ol{
         border:$black-ash4;
         display: none;
         &.open{
-          display:block;
+          display: block;
+          position: relative;
+          width: 150px;
+          height: auto;
+          top: -40px;
+          left: 50px;
+          background: $link-blue;
         }
         li{
-          padding-left:15%;
+          padding-left:10%;
+          min-height: 30px;
+          line-height: 30px;
+          a{
+            font-size: 14px;
+          }
           &.active{
-            background: $black-ash4;
             a{
               color: $white;
             }
@@ -190,7 +201,7 @@ ul,ol{
   padding-top: 40px;
 }
 .view-main-gray{
-  background:$double-lgt-gray;
+  background:$white;
 }
 
 .filter-warp{
@@ -200,4 +211,40 @@ ul,ol{
   position: absolute;
   right: 0;
   top: 100px;
+}
+
+.content{
+  padding: 10px 20px 10px 20px;
+  min-width: 320px;
+}
+
+.hpanel{
+  border: none;
+  box-shadow: none;
+  margin-bottom: 25px;
+  .panel-heading{
+    color: $font-black;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 4px;
+    transition: all .3s;
+    border-bottom: 1px solid $black-gray-border;
+  }
+  .panel-title{
+    color: $font-black;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 4px;
+  }
+  .panel-body{
+    background: $white;
+    border: 1px solid $white-gray;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    font-size: 12px;
+    label{
+      color:$font-black;
+    }
+  }
 }

@@ -2,4 +2,4 @@
 class BaseServer{
 
 }
-angular.module('hb.core').service('BaseServer',BaseServer);
+angular.module('hb.core').service('baseServer',BaseServer);

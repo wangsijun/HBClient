@@ -6,20 +6,26 @@
 
 appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider'];
 
-appRun.$inject = ['$rootScope', '$cookies', '$location', '$state', 'userService'];
+appRun.$inject = ['$rootScope', '$cookies', '$location', '$state', 'adminService'];
 
-appController.$inject = ['$http','$rootScope', '$location','userService','navigationService'];
+appController.$inject = ['$http','$rootScope', '$location','adminService','navigationService'];
 
-function appController($http,$rootScope,$location,UserService,NavigationService) {
+function appController($http,$rootScope,$location,AdminService,NavigationService) {
     var $this = this
     $this.$location = $location;
-    $this.userService = UserService;
+    $this.adminService = AdminService;
     $this.widescreen = true;
     $http.get("/assets/jsons/transactions.json").success(function(result){
         $rootScope.data = result;
     });
     $rootScope.$watch(function(){return NavigationService.widescreen},function(){
         $this.widescreen = NavigationService.widescreen
+    })
+    $rootScope.$watch(function(){return AdminService.getAdmin().isAuthentication},function(){
+        $this.isAuthentication = AdminService.getAdmin().isAuthentication
+    })
+    $rootScope.$watch(function(){return AdminService.getAdmin().friends},function(){
+        $this.friends = AdminService.getAdmin().friends
     })
 }
 
@@ -63,6 +69,12 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
                 controller: 'permissionSettingsController',
                 controllerAs: 'panelVm'
             })
+            .state('panel.admin', {
+                url: '/admin',
+                templateUrl: '/app/templates/panel/panel.html',
+                controller: 'adminSettingsController',
+                controllerAs: 'panelVm'
+            })
     //.state('logout', {
     //    url: '/login',
     //    templateUrl: '/app/components/login/login.html',
@@ -78,13 +90,13 @@ function appConfig($stateProvider, $urlRouterProvider, $httpProvider) {
 
 }
 
-function appRun($rootScope, $cookies, $location,$state,UserService) {
+function appRun($rootScope, $cookies, $location,$state,AdminService) {
     //添加路由监测
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         if (toState.name == "home") {
             //$location.path();//获取路由地址
             //$location.path('/');//设置路由地址
-            var user = UserService.getUser();
+            var user = AdminService.getAdmin();
             user.isAuthentication = false;
             //$cookies.remove('coaching');
         }
