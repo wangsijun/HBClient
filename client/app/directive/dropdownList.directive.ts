@@ -14,7 +14,7 @@ module DropdownListDirective{
             directive.templateUrl='/app/templates/directive-tmp/dropdown-list.html'
             directive.controller=DropdownListController
             directive.controllerAs='dropdown'
-            directive.bindToController={ 'data':'=','setDefaultValue':'=','getValue':'='}
+            directive.bindToController={ 'data':'=','setDefaultValue':'=','getValue':'=',butSize:'@?'}
 
             return directive;
         }
@@ -32,6 +32,9 @@ module DropdownListDirective{
             var $this = this
             $this.scope = $scope
             $this.open = false
+            if(!$this['butSize']){
+                $this['butSize']='sm'
+            }
             if($this.setDefaultValue!=0){
                 $this.setValue()
             }

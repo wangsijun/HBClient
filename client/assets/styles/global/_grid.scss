@@ -47,6 +47,13 @@ $grid-footer-top:#d3d3d3;
       &.grid-sort{
 
       }
+      span{
+        input[type=checkbox]{
+          opacity:1;
+          width: 14px;
+          position: inherit;
+        }
+      }
     }
     td{
       border-color:$grid-border;
@@ -56,6 +63,11 @@ $grid-footer-top:#d3d3d3;
             font-size: 13px;
             vertical-align: middle;
           }
+        }
+        input[type=checkbox]{
+          opacity:1;
+          width: 14px;
+          position: inherit;
         }
       }
     }

@@ -77,7 +77,7 @@ class AdminSettingsController extends PanelController{
                     {
                         name:'nick',
                         index:'nick',
-                        hidden:true
+                        hidden:false
                     },
                     {
                         name:'pwd',
@@ -89,7 +89,7 @@ class AdminSettingsController extends PanelController{
                     {
                         name:'email',
                         index:'email',
-                        type:'string',
+                        type:'checkbox',
                         edit:true
                     },
                     {

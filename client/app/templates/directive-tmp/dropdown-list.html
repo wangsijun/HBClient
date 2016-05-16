@@ -1,5 +1,5 @@
 <div ng-class="dropdown.open?'btn-group open':'btn-group'">
-    <button class="btn btn-default btn-sm dropdown-toggle" type="button" ng-model="dropdown.value" ng-click="dropdown.open=!dropdown.open">
+    <button class="btn btn-default {{dropdown.butSize?'btn-'+dropdown.butSize:''}} dropdown-toggle"  type="button" ng-model="dropdown.value" ng-click="dropdown.open=!dropdown.open">
         {{dropdown.name}}
         <span class="caret"></span>
     </button>

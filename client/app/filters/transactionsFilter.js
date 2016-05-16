@@ -41,4 +41,3 @@ angular.module('hb.core').filter('transactions', TransactionsFilter.filter);
 //    };
 //}
 //
-//# sourceMappingURL=transactionsFilter.js.map

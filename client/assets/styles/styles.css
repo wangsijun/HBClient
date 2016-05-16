@@ -94,11 +94,19 @@ input[type=checkbox]:checked + label {
       font-size: 12px; }
       .hb-grid .hb-body th > .header-title {
         text-alian: center; }
+      .hb-grid .hb-body th span input[type=checkbox] {
+        opacity: 1;
+        width: 14px;
+        position: inherit; }
     .hb-grid .hb-body td {
       border-color: #DDDDDD; }
       .hb-grid .hb-body td span button i.fa {
         font-size: 13px;
         vertical-align: middle; }
+      .hb-grid .hb-body td span input[type=checkbox] {
+        opacity: 1;
+        width: 14px;
+        position: inherit; }
   .hb-grid .hb-footer {
     border-left: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;

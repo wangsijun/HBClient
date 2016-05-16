@@ -12,7 +12,7 @@ module GridDirective{
             directive.templateUrl = "/app/templates/directive-tmp/grid.html"
             directive.controller = GridController
             directive.controllerAs = "grid"
-            directive.bindToController = { 'data':'=','appendData':'=','saveCallback':'=','deleteCallback':'=','getDataCallback':'='}
+            directive.bindToController = { 'data':'=','appendData':'=','saveCallback':'=','deleteCallback':'=','getDataCallback':'=','selectorRowAll':'=?'}
             return directive
         }
     }
@@ -209,6 +209,27 @@ module GridDirective{
         deleteRow(row){
             var $this = this
             $this.deleteCallback(row)
+        }
+
+        changeCheckbox(value){
+            return !value;
+        }
+
+        changeAll(index){
+            var $this = this
+            if(index==='selectorRowAll'){
+                var value = $this['selectedRowAll']
+                angular.forEach($this.module,function(item){
+                  item['selected'] = value
+                })
+            }else{
+
+                angular.forEach($this.module,function(item){
+                    if(item.index==index){
+                        item[index] = value
+                    }
+                })
+            }
         }
 
         getRowsData(row) {
