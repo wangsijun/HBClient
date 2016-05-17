@@ -158,7 +158,7 @@ class AdminSettingsController extends PanelController{
                 console.log(result);
             }
             else{
-                alert(result);
+                $this.appendData = result.data;
             }
         });
     }
