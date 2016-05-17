@@ -62,17 +62,8 @@ class AdminSettingsController extends PanelController{
                         type:'string',
                         dateFormat:"MM/DD/YYYY",
                         align:'right',
-                        sort:true,
-                        verify:{
-                            require:true,
-                            length:1000,
-                            minValue:0,
-                            maxValue:1000,
-                            regexp:[
-                                {exp:"/ssdfsdf/", message:"sdfsdf"},
-                                {exp:"/sdfdsf/", message:"sdfsdfsdf"}
-                            ]
-                        }
+                        sort:true
+
                     },
                     {
                         name:'nick',
@@ -83,8 +74,17 @@ class AdminSettingsController extends PanelController{
                         name:'pwd',
                         index:'pwd',
                         type:'string',
-                        edit:true
-
+                        edit:true,
+                        verify:{
+                            require:true,
+                            length:1000,
+                            minValue:0,
+                            maxValue:1000,
+                            regexp:[
+                                {exp:"/ssdfsdf/", message:"sdfsdf"},
+                                {exp:"/sdfdsf/", message:"sdfsdfsdf"}
+                            ]
+                        }
                     },
                     {
                         name:'email',

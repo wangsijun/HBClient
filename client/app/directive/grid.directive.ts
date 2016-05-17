@@ -150,9 +150,11 @@ module GridDirective{
 
         saveRow(row){
             var $this = this
-            row.edit = false
+
             $this.reformatting(row)
             console.log(row)
+
+            row.edit = false
             //$this.saveCallback(row)
         }
 
@@ -229,7 +231,7 @@ module GridDirective{
 					var len = $this.module.length
 					var olen = 0
 					angular.forEach($this.module,function(item){
-						if(item['selected']==true){
+						if(item['selected']){
 							olen++
 						}
 					})
