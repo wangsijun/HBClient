@@ -27,7 +27,7 @@
             <tr ng-repeat="item in grid.module" id="item['Id']">
                 <td ng-if="grid['selectorRowAll']">
                     <span>
-                        <input type="checkbox" ng-model="item['selected']" ng-checked="item['selected']" />
+                        <input type="checkbox" ng-model="item['selected']" ng-checked="item['selected']" ng-change="grid.changeAll(item)" />
                     </span>
                 </td>
                 <td ng-repeat="cell in grid.cells" ng-class="'text-'+cell['align']" ng-if="!cell['hidden']">

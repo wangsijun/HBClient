@@ -215,20 +215,30 @@ module GridDirective{
             return !value;
         }
 
-        changeAll(index){
+        changeAll(obj){
             var $this = this
-            if(index==='selectorRowAll'){
-                var value = $this['selectedRowAll']
-                angular.forEach($this.module,function(item){
-                  item['selected'] = value
-                })
-            }else{
-
-                angular.forEach($this.module,function(item){
-                    if(item.index==index){
-                        item[index] = value
-                    }
-                })
+            if(typeof(obj)=='string'){
+				if(obj==='selectorRowAll'){
+					var value = $this['selectedRowAll']
+					angular.forEach($this.module,function(item){
+					  item['selected'] = value
+					})
+				}
+            }else if(typeof(obj)=='object'){
+				if(obj['selected']!=undefined){
+					var len = $this.module.length
+					var olen = 0
+					angular.forEach($this.module,function(item){
+						if(item['selected']==true){
+							olen++
+						}
+					})
+					if(olen===len&&obj['selected']){
+						$this['selectedRowAll']=true
+					}else{
+						$this['selectedRowAll']=false
+					}
+				}
             }
         }
 
