@@ -43,7 +43,7 @@
                         <span ng-if="cell['type']!='checkbox'&&cell['type']!='dropdown'">{{item[cell['index']]}}</span>
                         <span ng-if="cell['type']=='dropdown'">{{item[cell['index']].name}}</span>
                         <span ng-if="cell['type']=='checkbox'">
-                            <input ng-if="cell['edit']" type="checkbox" disabled="disabled" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
+                            <input type="checkbox" disabled="disabled" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
                         </span>
                     </span>
                     <span ng-if="item.edit">
@@ -56,8 +56,7 @@
                             </button>
                         </span>
                         <span ng-if="cell['type']=='checkbox'">
-                            <span ng-if="!cell['edit']">{{item[cell['index']]}}</span>
-                            <input ng-if="cell['edit']" type="checkbox" ng-disabled="!cell['edit']" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
+                            <input type="checkbox" ng-disabled="!cell['edit']" ng-model="item[cell['index']]" ng-change="grid.changeCheckbox(item[cell['index']])" ng-checked="item[cell['index']]"/>
                         </span>
                         <span ng-if="cell['type']=='dropdown'">
                             <span ng-if="!cell['edit']">{{item[cell['index']].name}}</span>

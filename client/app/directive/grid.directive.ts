@@ -134,7 +134,7 @@ module GridDirective{
             angular.forEach($this.module,function(item,i){
                 angular.forEach(dropdownList,function(obj){
                     if(item[key]==obj.value){
-                        item[key] = obj
+                        item[key] =angular.copy(obj)
                     }
                 })
             })
@@ -165,7 +165,7 @@ module GridDirective{
                     if(key === cell['index']&&cell['edit']){
                         switch(cell['type']){
                             case "dropdown":
-                                $this.setNewDataToModeule(key,row['rowId'],value)
+                                $this.setNewDataToModeule(key,row['rowId'],value.value)
                                 if(cell['dropdownList']){
                                     angular.forEach(cell['dropdownList'],function(obj){
                                         if(value.value==obj.value){
@@ -175,10 +175,10 @@ module GridDirective{
                                 }
                                 break;
                             case "checkbox":
-
+                                $this.setNewDataToModeule(key,row['rowId'],value)
                                 break;
                             default:
-                                $this.setBasetypeDataToModule(key,row['rowId'],value)
+                                $this.setNewDataToModeule(key,row['rowId'],value)
                                 break;
                         }
                     }
@@ -190,19 +190,19 @@ module GridDirective{
             var $this = this
             angular.forEach($this.data.module,function(obj){
                if(obj['rowId']===rowId){
-                   obj[key] = value.value
+                   obj[key] = value
                }
             })
         }
 
-        setBasetypeDataToModule(key,rowId,value){
-            var $this = this
-            angular.forEach($this.data.module,function(obj){
-                if(obj['rowId']===rowId){
-                    obj[key] = value
-                }
-            })
-        }
+        //setBasetypeDataToModule(key,rowId,value){
+        //    var $this = this
+        //    angular.forEach($this.data.module,function(obj){
+        //        if(obj['rowId']===rowId){
+        //            obj[key] = value
+        //        }
+        //    })
+        //}
 
         cleanRow(row){
 
@@ -258,6 +258,7 @@ module GridDirective{
                 console.log($this.module)
                 // $this.getDataCallback($this.module)
             }
+            console.log($this.data.module);
         }
     }
 }
