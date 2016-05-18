@@ -178,12 +178,17 @@ module GridDirective{
                                 $this.setNewDataToModeule(key,row['rowId'],value)
                                 break;
                             default:
+                                $this.verifyChanges(key,$this.cells[index]['verify'],cell['type'])
                                 $this.setNewDataToModeule(key,row['rowId'],value)
                                 break;
                         }
                     }
                 })
             })
+        }
+
+        verifyChanges(key,verify,type){
+
         }
 
         setNewDataToModeule(key,rowId,value){
